@@ -5,12 +5,12 @@ import { createStore } from 'redux'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { counter } from './index.redux'
+import { counter, addGUN, removeGUN } from './index.redux'
 
 const store = createStore(counter)
 
 const render = () => {
-  ReactDOM.render(<App store={store} />, document.getElementById('root'));
+  ReactDOM.render(<App store={store} addGUN={addGUN} removeGUN={removeGUN} />, document.getElementById('root'));
 }
 render()
 store.subscribe(render)

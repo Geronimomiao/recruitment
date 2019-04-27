@@ -1,11 +1,13 @@
 import React from 'react'
 import { Button, List } from 'antd-mobile';
-import { addGUN, removeGUN } from './index.redux'
+// import { addGUN, removeGUN } from './index.redux'
 
 class App extends React.Component{
   render() {
     const boss = '李云龙'
     const store = this.props.store
+    const addGUN = this.props.addGUN
+    const removeGUN = this.props.removeGUN
     const num = store.getState()
     return (
       <div>
@@ -14,6 +16,7 @@ class App extends React.Component{
         <Cavalry boss="孙德胜"></Cavalry>
         <h1>现在有机枪{num}把</h1>
         <Button onClick={()=> store.dispatch(addGUN())}>申请武器</Button>
+        <Button onClick={()=> store.dispatch(removeGUN())}>回收武器</Button>
       </div>
     )
   }
