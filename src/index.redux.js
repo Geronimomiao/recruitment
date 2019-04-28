@@ -20,3 +20,10 @@ export const addGUN = () => {
 export const removeGUN = () => {
   return {type: REMOVE_GUN}
 }
+export const addGunAsync = () => {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(addGUN())
+    }, 2000)
+  }
+}
